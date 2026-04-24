@@ -11,8 +11,24 @@
 <title>Chunyang Cheng 程春阳</title>
 </head>
 
+
+<div style="margin-top:10px; font-size:14px; color:#555;">
+  Visitors: <span id="gc-visitors">Loading...</span>
+</div>
+
 <script data-goatcounter="https://awcxvvvvv.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
+<script>
+fetch("https://awcxvvvvv.goatcounter.com/counter/TOTAL.json")
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("gc-visitors").textContent = data.count;
+  })
+  .catch(() => {
+    document.getElementById("gc-visitors").textContent = "Unavailable";
+  });
+</script>
   
 <body>
 <td id="layout-content">
