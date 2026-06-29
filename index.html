@@ -1,139 +1,739 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="shortcut icon" type="image/x-icon" href="https://github.com/AWCXV/AWCXV.github.io/blob/main/images/ccy_ico.ico">
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<link rel="shortcut icon" href="/img/img_ico.ico" />
-<link rel="bookmark" href="/img/img_ico.ico" type="image/x-icon"　/>
-<title>Chunyang Cheng 程春阳</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="jemdoc, redesigned with custom HTML/CSS" />
+  <meta name="description" content="Academic homepage of Chunyang Cheng 程春阳, Jiangnan University." />
+  <title>Chunyang Cheng 程春阳</title>
+
+  <link rel="icon" href="/images/ccy_ico.ico" type="image/x-icon" />
+
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --surface: #ffffff;
+      --surface-soft: #fbfaf7;
+      --text: #202124;
+      --muted: #666b73;
+      --line: #e7e1d7;
+      --primary: #6d7f71;
+      --primary-dark: #4e6154;
+      --accent: #b58b6b;
+      --accent-soft: #f2e6dc;
+      --blue-soft: #e7eef5;
+      --blue: #58708a;
+      --red-soft: #f3dfda;
+      --red: #a45a4e;
+      --green-soft: #e4eee6;
+      --green: #607968;
+      --shadow: 0 18px 50px rgba(38, 43, 48, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 16% 8%, rgba(181, 139, 107, 0.16), transparent 30%),
+        radial-gradient(circle at 84% 0%, rgba(109, 127, 113, 0.14), transparent 28%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: color 0.18s ease, background-color 0.18s ease, transform 0.18s ease;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 10px 0 24px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--primary-dark);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav a {
+      padding: 8px 13px;
+      border: 1px solid rgba(109, 127, 113, 0.18);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.56);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav a:hover {
+      color: var(--primary-dark);
+      background: var(--surface);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 30px;
+      align-items: center;
+      padding: 34px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(231, 225, 215, 0.9);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .portrait-wrap {
+      position: relative;
+      width: 190px;
+      height: 190px;
+      margin: 0 auto;
+    }
+
+    .portrait-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -9px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(109, 127, 113, 0.28), rgba(181, 139, 107, 0.28));
+      z-index: 0;
+    }
+
+    .portrait {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 28px;
+      border: 5px solid var(--surface);
+      box-shadow: 0 18px 34px rgba(38, 43, 48, 0.16);
+      background: var(--surface-soft);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 5vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .subtitle {
+      margin: 16px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 20px;
+      margin: 24px 0 0;
+      color: var(--muted);
+    }
+
+    .meta-item strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+    }
+
+    .button.primary {
+      color: white;
+      background: var(--primary-dark);
+      box-shadow: 0 10px 24px rgba(78, 97, 84, 0.22);
+    }
+
+    .button.primary:hover {
+      color: white;
+      background: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      color: var(--primary-dark);
+      background: var(--green-soft);
+      border-color: rgba(96, 121, 104, 0.18);
+    }
+
+    .button.secondary:hover {
+      background: var(--surface);
+      transform: translateY(-1px);
+    }
+
+    .section {
+      margin-top: 30px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(231, 225, 215, 0.9);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 36px rgba(38, 43, 48, 0.055);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .timeline,
+    .award-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .timeline li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 18px;
+      padding: 15px 0 15px 24px;
+      border-bottom: 1px solid rgba(231, 225, 215, 0.7);
+    }
+
+    .timeline li:last-child {
+      border-bottom: 0;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 25px;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px var(--accent-soft);
+    }
+
+    .time {
+      color: var(--primary-dark);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .role {
+      font-weight: 800;
+    }
+
+    .affiliation {
+      color: var(--muted);
+    }
+
+    .publication-list {
+      margin: 0;
+      padding-left: 0;
+      list-style-position: inside;
+      counter-reset: item 21;
+    }
+
+    .publication-list > li {
+      margin: 13px 0;
+      padding: 18px 18px 18px 20px;
+      background: var(--surface-soft);
+      border: 1px solid rgba(231, 225, 215, 0.92);
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(38, 43, 48, 0.04);
+    }
+
+    .publication-list > li::marker {
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .paper-title {
+      font-weight: 760;
+      color: var(--text);
+    }
+
+    .venue {
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      height: 22px;
+      margin-left: 6px;
+      padding: 0 8px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      vertical-align: 1px;
+      white-space: nowrap;
+      border: 1px solid transparent;
+    }
+
+    .badge.ccfa {
+      color: var(--red);
+      background: var(--red-soft);
+      border-color: rgba(164, 90, 78, 0.16);
+    }
+
+    .badge.top {
+      color: var(--blue);
+      background: var(--blue-soft);
+      border-color: rgba(88, 112, 138, 0.16);
+    }
+
+    .badge.ieee {
+      color: var(--primary-dark);
+      background: var(--green-soft);
+      border-color: rgba(96, 121, 104, 0.16);
+    }
+
+    .badge.ccfc {
+      color: #7a756d;
+      background: #f2f0ec;
+      border-color: rgba(122, 117, 109, 0.18);
+    }
+
+    .links {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-left: 4px;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(109, 127, 113, 0.08);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .links a:hover {
+      background: var(--accent-soft);
+      color: #8a674f;
+    }
+
+    .award-list li {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(231, 225, 215, 0.7);
+    }
+
+    .award-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .award-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .visitor-card {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(231, 225, 215, 0.88);
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 22px, 1120px);
+        padding-top: 16px;
+      }
+
+      .topbar,
+      .section-header,
+      .footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        text-align: left;
+      }
+
+      .portrait-wrap {
+        margin-left: 0;
+        width: 158px;
+        height: 158px;
+      }
+
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .section {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
 
-
-<div style="margin-top:10px; font-size:14px; color:#555;">
-  Visitors: <span id="gc-visitors">Loading...</span>
-</div>
-
-<script data-goatcounter="https://awcxvvvvv.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-
-<script>
-fetch("https://awcxvvvvv.goatcounter.com/counter/TOTAL.json")
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById("gc-visitors").textContent = data.count;
-  })
-  .catch(() => {
-    document.getElementById("gc-visitors").textContent = "Unavailable";
-  });
-</script>
-  
 <body>
-<td id="layout-content">
-<div id="toptitle">
-<h1>Chunyang Cheng 程春阳</h1>
-</div>
-<table class="imgtable"><tr><td>
-<a href="https://awcxv.github.io"><img src="/images/ccy.jpg" alt="alt text" height="170px" /></a>&nbsp;</td>  
-<td align="left">
-Status: Postdoc <br />
-Advisors: Xin Ma, Xiao-Jun Wu, Josef Kittler  <br />
-Research Interest: Image Fusion <br />
-Institution: Jiangnan University <br />
-Location: Wuxi, China <br />
-E-mail: chunyang_cheng@jiangnan.edu.cn<br />
-<div class="menu-item"><a href="https://scholar.google.com.hk/citations?user=tkTfP6wAAAAJ&hl=zh-CN">Google Scholar</a></div>
-<div class="menu-item"><a href="https://github.com/AWCXV">Code Repository</a></div>
-</td></tr></table>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="https://awcxv.github.io">Chunyang Cheng</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#awards">Awards</a>
+      </nav>
+    </header>
 
-<h3><font color=black>Experience </font></h3>
-<ul>
-</li>
+    <section class="hero" id="about">
+      <a class="portrait-wrap" href="https://awcxv.github.io" aria-label="Homepage">
+        <img class="portrait" src="/images/ccy.jpg" alt="Chunyang Cheng" />
+      </a>
 
+      <div>
+        <p class="eyebrow">Academic Homepage</p>
+        <h1>Chunyang Cheng <span lang="zh-CN">程春阳</span></h1>
+        <p class="subtitle">
+          Postdoctoral researcher at Jiangnan University. My research interest focuses on image fusion.
+        </p>
 
-  <li>2025 ~ now  &ensp; <b>Postdoc </b> &ensp; Translational Medicine Research Institute &ensp; <b>Jiangnan University</b>, Wuxi, China </li>  
-  <li>2024 ~ 2025  &ensp; <b>PhD Student </b> &ensp; International Joint Laboratory on Artificial Intelligence of Jiangsu Province &ensp; <b>Jiangnan University</b>, Wuxi, China </li>
-  <li>2023 ~ 2024  &ensp; <b>Visiting Research PhD Student </b> &ensp; Centre for Vision, Speech and Signal Processing (CVSSP) &ensp; <b>University of Surrey</b>, Guildford, UK </li>
-  <li>2022 ~ 2023  &ensp; <b>PhD Student </b> &ensp;International  Joint Laboratory on Artificial Intelligence of Jiangsu Province &ensp; <b>Jiangnan University</b>, Wuxi, China </li>
-  <li>2020 ~ 2022  &ensp; <b>Master Student </b> &ensp;International Joint Laboratory on Artificial Intelligence of Jiangsu Province &ensp; <b>Jiangnan University</b>, Wuxi, China  </li>
-  <li>2016 ~ 2020  &ensp; <b>Bachelor Degree</b> &ensp;School of Computer and Information Engineering &ensp; <b>Henan University</b>, Kaifeng, China  </li>
+        <div class="meta-grid" aria-label="Profile information">
+          <div class="meta-item"><strong>Status:</strong> Postdoc</div>
+          <div class="meta-item"><strong>Institution:</strong> Jiangnan University</div>
+          <div class="meta-item"><strong>Advisors:</strong> Xin Ma, Xiao-Jun Wu, Josef Kittler</div>
+          <div class="meta-item"><strong>Location:</strong> Wuxi, China</div>
+          <div class="meta-item"><strong>Research Interest:</strong> Image Fusion</div>
+          <div class="meta-item"><strong>E-mail:</strong> <a href="mailto:chunyang_cheng@jiangnan.edu.cn">chunyang_cheng@jiangnan.edu.cn</a></div>
+        </div>
 
+        <div class="actions">
+          <a class="button primary" href="https://scholar.google.com.hk/citations?user=tkTfP6wAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <a class="button secondary" href="https://github.com/AWCXV" target="_blank" rel="noopener noreferrer">Code Repository</a>
+        </div>
+      </div>
+    </section>
 
-  </ul>
+    <section class="section" id="experience">
+      <div class="section-header">
+        <h2>Experience</h2>
+        <p class="section-note">Education and research appointments</p>
+      </div>
 
-  
-<h3><font color=black> Publications </font></h3>
-<ul>
-</li>
+      <ul class="timeline">
+        <li>
+          <span class="time">2025 ~ now</span>
+          <span><span class="role">Postdoc</span> · <span class="affiliation">Translational Medicine Research Institute · <strong>Jiangnan University</strong>, Wuxi, China</span></span>
+        </li>
+        <li>
+          <span class="time">2024 ~ 2025</span>
+          <span><span class="role">PhD Student</span> · <span class="affiliation">International Joint Laboratory on Artificial Intelligence of Jiangsu Province · <strong>Jiangnan University</strong>, Wuxi, China</span></span>
+        </li>
+        <li>
+          <span class="time">2023 ~ 2024</span>
+          <span><span class="role">Visiting Research PhD Student</span> · <span class="affiliation">Centre for Vision, Speech and Signal Processing (CVSSP) · <strong>University of Surrey</strong>, Guildford, UK</span></span>
+        </li>
+        <li>
+          <span class="time">2022 ~ 2023</span>
+          <span><span class="role">PhD Student</span> · <span class="affiliation">International Joint Laboratory on Artificial Intelligence of Jiangsu Province · <strong>Jiangnan University</strong>, Wuxi, China</span></span>
+        </li>
+        <li>
+          <span class="time">2020 ~ 2022</span>
+          <span><span class="role">Master Student</span> · <span class="affiliation">International Joint Laboratory on Artificial Intelligence of Jiangsu Province · <strong>Jiangnan University</strong>, Wuxi, China</span></span>
+        </li>
+        <li>
+          <span class="time">2016 ~ 2020</span>
+          <span><span class="role">Bachelor Degree</span> · <span class="affiliation">School of Computer and Information Engineering · <strong>Henan University</strong>, Kaifeng, China</span></span>
+        </li>
+      </ul>
+    </section>
 
-<ol reversed start="20" style="padding-left: 0; margin-left: 0;">
-  <li>"EvaNet: Towards More Efficient and Consistent Infrared and Visible Image Fusion Assessment." <b>IEEE TPAMI</b>, 2026. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"> [<a href="http://evanet.online:5001"><font color=blue>EvaJudge Platform</font></a>] [<a href="https://ieeexplore.ieee.org/document/11477151"><font color=blue>paper</font></a>] [<a href="https://github.com/AWCXV/EvaNet"><font color=blue>Code</font></a>]</li>
+    <section class="section" id="publications">
+      <div class="section-header">
+        <h2>Publications</h2>
+        <p class="section-note">Representative and recent works</p>
+      </div>
 
-  <li>"Beyond Strict Pairing: Arbitrarily Paired Training for High-Performance Infrared and Visible Image Fusion." <b>CVPR</b>, 2026. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"> [<a href="https://arxiv.org/abs/2603.21820"><font color=blue>paper</font></a>] [<a href="https://github.com/yanglinDeng/IVIF_unpair"><font color=blue>Code</font></a>]
-  
-  <li>"Controllable Foundation Model for Visible and Infrared Image Fusion with All-in-One Bad Weather Removal." <b>IEEE TMM</b>, 2026. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"></li>
+      <ol class="publication-list" reversed start="20">
+        <li>
+          <span class="paper-title">“EvaNet: Towards More Efficient and Consistent Infrared and Visible Image Fusion Assessment.”</span>
+          <span class="venue">IEEE TPAMI</span>, 2026.
+          <span class="badge ccfa">CCF-A</span>
+          <span class="links"><a href="http://evanet.online:5001" target="_blank" rel="noopener noreferrer">EvaJudge Platform</a><a href="https://ieeexplore.ieee.org/document/11477151" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/AWCXV/EvaNet" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
 
-  <li>"Depth-Nutrition: A Novel Food Nutrition Prediction Framework Guided by Deconstruction of Physical Features." <b>IEEE TMM</b>, 2025. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"></li> [<a href="https://ieeexplore.ieee.org/abstract/document/11498448/"><font color=blue>paper</font></a>]
-  
-  <li>"SMLNet: A SPD Manifold Learning Network for Infrared and Visible Image Fusion." <b>IJCV</b>, 2025. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"> [<a href="https://arxiv.org/abs/2411.10679"><font color=blue>paper</font></a>] [<a href="https://github.com/Shaoyun2023/SMLNet"><font color=blue>Code</font></a>]</li>
-  
-  <li>"Revisiting RGBT Tracking Benchmarks from the Perspective of Modality Validity: A New Benchmark, Problem, and Solution." <b>IEEE TIP</b>, 2025. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"> [<a href="https://arxiv.org/abs/2405.00168"><font color=blue>paper</font></a>] [<a href="https://github.com/Zhangyong-Tang/MVRGBT"><font color=blue>Code</font></a>]</li>
-  
-  <li>"S4Fusion: Saliency-aware Selective State Space Model for Infrared Visible Image Fusion." <b>IEEE TIP</b>, 2025. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"> [<a href="https://ieeexplore.ieee.org/abstract/document/11062462"><font color=blue>paper</font></a>] [<a href="https://github.com/zipper112/S4Fusion"><font color=blue>Code</font></a>]</li>
-  
-  <li>"Serial Over Parallel: Learning Continual Unification for Multi-Modal Visual Object Tracking and Benchmarking." <b>ACM MM</b>, 2025. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"> [<a href="https://arxiv.org/abs/2508.10655"><font color=blue>paper</font></a>] [<a href="https://github.com/Zhangyong-Tang/UniBench300"><font color=blue>Code</font></a>]</li>
-  
-  <li>"GrFormer: A Novel Transformer on Grassmann Manifold for Infrared and Visible Image Fusion." <b>Information Fusion</b>, 2025. <img src="https://img.shields.io/badge/一区-Top-blue" height="16px"> [<a href="https://www.sciencedirect.com/science/article/pii/S1566253525004750?via%3Dihub"><font color=blue>paper</font></a>]</li>
-  
-  <li>"One Model for ALL: Low-Level Task Interaction Is a Key to Task-Agnostic Image Fusion." <b>CVPR</b>, 2025. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"> [<a href="https://arxiv.org/abs/2502.19854"><font color=blue>paper</font></a>] [<a href="https://github.com/AWCXV/GIFNet"><font color=blue>Code</font></a>]</li>
+        <li>
+          <span class="paper-title">“Beyond Strict Pairing: Arbitrarily Paired Training for High-Performance Infrared and Visible Image Fusion.”</span>
+          <span class="venue">CVPR</span>, 2026.
+          <span class="badge ccfa">CCF-A</span>
+          <span class="links"><a href="https://arxiv.org/abs/2603.21820" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/yanglinDeng/IVIF_unpair" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
 
-  <li>"TextFusion: Unveiling the power of textual semantics for controllable image fusion." <b>Information Fusion</b>, 2025. <img src="https://img.shields.io/badge/一区-Top-blue" height="16px"> [<a href="https://www.sciencedirect.com/science/article/abs/pii/S1566253524005682"><font color=blue>paper</font></a>] [<a href="https://github.com/AWCXV/TextFusion"><font color=blue>Code</font></a>]</li>
+        <li>
+          <span class="paper-title">“Controllable Foundation Model for Visible and Infrared Image Fusion with All-in-One Bad Weather Removal.”</span>
+          <span class="venue">IEEE TMM</span>, 2026.
+          <span class="badge ccfa">CCF-A</span>
+        </li>
 
-  <li>"FusionBooster: A Unified Image Fusion Boosting Paradigm." <b>IJCV</b>, 2025. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"> [<a href="https://arxiv.org/abs/2305.05970"><font color=blue>paper</font></a>] [<a href="https://github.com/AWCXV/FusionBooster"><font color=blue>Code</font></a>]</li>
+        <li>
+          <span class="paper-title">“Depth-Nutrition: A Novel Food Nutrition Prediction Framework Guided by Deconstruction of Physical Features.”</span>
+          <span class="venue">IEEE TMM</span>, 2025.
+          <span class="badge ccfa">CCF-A</span>
+          <span class="links"><a href="https://ieeexplore.ieee.org/abstract/document/11498448/" target="_blank" rel="noopener noreferrer">paper</a></span>
+        </li>
 
-  <li>"Conti-Fuse: A novel continuous decomposition-based fusion framework for infrared and visible images." <b>Information Fusion</b>, 2025. <img src="https://img.shields.io/badge/一区-Top-blue" height="16px"> [<a href="https://www.sciencedirect.com/science/article/pii/S1566253524006171"><font color=blue>paper</font></a>] [<a href="https://github.com/zipper112/Conti-Fuse"><font color=blue>Code</font></a>]</li>
+        <li>
+          <span class="paper-title">“SMLNet: A SPD Manifold Learning Network for Infrared and Visible Image Fusion.”</span>
+          <span class="venue">IJCV</span>, 2025.
+          <span class="badge ccfa">CCF-A</span>
+          <span class="links"><a href="https://arxiv.org/abs/2411.10679" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/Shaoyun2023/SMLNet" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
 
-  <li>"SMFuse: Two-Stage Structural Map Aware Network for Multi-focus Image Fusion." <b>ICPR</b>, 2025. <img src="https://img.shields.io/badge/CCF-C-white" height="16px"> [<a href="https://link.springer.com/chapter/10.1007/978-3-031-78312-8_1"><font color=blue>paper</font></a>]</li>
+        <li>
+          <span class="paper-title">“Revisiting RGBT Tracking Benchmarks from the Perspective of Modality Validity: A New Benchmark, Problem, and Solution.”</span>
+          <span class="venue">IEEE TIP</span>, 2025.
+          <span class="badge ccfa">CCF-A</span>
+          <span class="links"><a href="https://arxiv.org/abs/2405.00168" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/Zhangyong-Tang/MVRGBT" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
 
-  <li>"MMDRFuse: Distilled Mini-Model with Dynamic Refresh for Multi-Modality Image Fusion." <b>ACM MM (oral)</b>, 2024. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"> [<a href="https://arxiv.org/abs/2408.15641"><font color=blue>paper</font></a>] [<a href="https://github.com/yanglinDeng/MMDRFuse"><font color=blue>Code</font></a>]</li>
+        <li>
+          <span class="paper-title">“S4Fusion: Saliency-aware Selective State Space Model for Infrared Visible Image Fusion.”</span>
+          <span class="venue">IEEE TIP</span>, 2025.
+          <span class="badge ccfa">CCF-A</span>
+          <span class="links"><a href="https://ieeexplore.ieee.org/abstract/document/11062462" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/zipper112/S4Fusion" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
 
-  <li>"Learning Feature Restoration Transformer for Robust Dehazing Visual Object Tracking." <b>IJCV</b>, 2024. <img src="https://img.shields.io/badge/CCF-A-red" height="16px"> [<a href="https://link.springer.com/article/10.1007/s11263-024-02182-9"><font color=blue>paper</font></a>]</li>
+        <li>
+          <span class="paper-title">“Serial Over Parallel: Learning Continual Unification for Multi-Modal Visual Object Tracking and Benchmarking.”</span>
+          <span class="venue">ACM MM</span>, 2025.
+          <span class="badge ccfa">CCF-A</span>
+          <span class="links"><a href="https://arxiv.org/abs/2508.10655" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/Zhangyong-Tang/UniBench300" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
 
-  <li>"DePF: A novel fusion approach based on decomposition pooling for infrared and visible images." <b>IEEE TIM</b>, 2023. <img src="https://img.shields.io/badge/IEEE-汇刊-blue" height="16px"> [<a href="https://ieeexplore.ieee.org/document/10288477"><font color=blue>paper</font></a>] [<a href="https://github.com/draymondbiao/DePF"><font color=blue>code</font></a>]</li>
-  
-  <li>"LE2Fusion: A novel local edge enhancement module for infrared and visible image fusion." <b>ICIG</b>, 2023. <img src="https://img.shields.io/badge/CCF-C-white" height="16px"> [<a href="https://link.springer.com/chapter/10.1007/978-3-031-46305-1_24"><font color=blue>paper</font></a>] [<a href="https://github.com/hli1221/LE2Fusion"><font color=blue>code</font></a>]</li>
-  
-  <li>"MUFusion: A general unsupervised image fusion network based on memory unit". <b>Information Fusion</b>, 2023. <img src="https://img.shields.io/badge/一区-Top-blue" height="16px"> [<a href="https://www.sciencedirect.com/science/article/abs/pii/S1566253522002202"><font color=blue>paper</font></a>] [<a href="https://github.com/AWCXV/MUFusion"><font color=blue>Code</font></a>]</li>
-  
-  <li>"UNIFusion: A lightweight unified image fusion network". <b>IEEE TIM</b>, 2021. <img src="https://img.shields.io/badge/IEEE-汇刊-blue" height="16px"> [<a href="https://ieeexplore.ieee.org/document/9550760"><font color=blue>paper</font></a>] [<a href="https://github.com/AWCXV/UNIFusion"><font color=blue>Code</font></a>]</li>
-</ol>
+        <li>
+          <span class="paper-title">“GrFormer: A Novel Transformer on Grassmann Manifold for Infrared and Visible Image Fusion.”</span>
+          <span class="venue">Information Fusion</span>, 2025.
+          <span class="badge top">一区-Top</span>
+          <span class="links"><a href="https://www.sciencedirect.com/science/article/pii/S1566253525004750?via%3Dihub" target="_blank" rel="noopener noreferrer">paper</a></span>
+        </li>
 
-</ul>
-<h3><font color=black> Awards & Projects </font></h3>
-<ul>
+        <li>
+          <span class="paper-title">“One Model for ALL: Low-Level Task Interaction Is a Key to Task-Agnostic Image Fusion.”</span>
+          <span class="venue">CVPR</span>, 2025.
+          <span class="badge ccfa">CCF-A</span>
+          <span class="links"><a href="https://arxiv.org/abs/2502.19854" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/AWCXV/GIFNet" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
 
+        <li>
+          <span class="paper-title">“TextFusion: Unveiling the power of textual semantics for controllable image fusion.”</span>
+          <span class="venue">Information Fusion</span>, 2025.
+          <span class="badge top">一区-Top</span>
+          <span class="links"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1566253524005682" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/AWCXV/TextFusion" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
 
-<li>2025 President's Special Award, Jiangnan University
-</li>  
-<li>2025 Top Ten Graduate Students, Jiangnan University
-</li>
-<li><b>Chair, Completed</b>, 2023 Postgraduate Research & Practice Innovation Program of Jiangsu Province
-</li>
-<li>2021 National Scholarship for Graduate Students
-</li>
-<li><b>Silver Medal</b>, 2019 ACM/ICPC International College Programming Competition Regional
-</li>
-<li><b>Silver Medal</b>, 2018 China College Student Programming Competition (CCPC)
-</li>
+        <li>
+          <span class="paper-title">“FusionBooster: A Unified Image Fusion Boosting Paradigm.”</span>
+          <span class="venue">IJCV</span>, 2025.
+          <span class="badge ccfa">CCF-A</span>
+          <span class="links"><a href="https://arxiv.org/abs/2305.05970" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/AWCXV/FusionBooster" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
 
+        <li>
+          <span class="paper-title">“Conti-Fuse: A novel continuous decomposition-based fusion framework for infrared and visible images.”</span>
+          <span class="venue">Information Fusion</span>, 2025.
+          <span class="badge top">一区-Top</span>
+          <span class="links"><a href="https://www.sciencedirect.com/science/article/pii/S1566253524006171" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/zipper112/Conti-Fuse" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
 
-  
-</ul>
-</td>
-</tr>
-</table>
+        <li>
+          <span class="paper-title">“SMFuse: Two-Stage Structural Map Aware Network for Multi-focus Image Fusion.”</span>
+          <span class="venue">ICPR</span>, 2025.
+          <span class="badge ccfc">CCF-C</span>
+          <span class="links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-78312-8_1" target="_blank" rel="noopener noreferrer">paper</a></span>
+        </li>
+
+        <li>
+          <span class="paper-title">“MMDRFuse: Distilled Mini-Model with Dynamic Refresh for Multi-Modality Image Fusion.”</span>
+          <span class="venue">ACM MM (oral)</span>, 2024.
+          <span class="badge ccfa">CCF-A</span>
+          <span class="links"><a href="https://arxiv.org/abs/2408.15641" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/yanglinDeng/MMDRFuse" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
+
+        <li>
+          <span class="paper-title">“Learning Feature Restoration Transformer for Robust Dehazing Visual Object Tracking.”</span>
+          <span class="venue">IJCV</span>, 2024.
+          <span class="badge ccfa">CCF-A</span>
+          <span class="links"><a href="https://link.springer.com/article/10.1007/s11263-024-02182-9" target="_blank" rel="noopener noreferrer">paper</a></span>
+        </li>
+
+        <li>
+          <span class="paper-title">“DePF: A novel fusion approach based on decomposition pooling for infrared and visible images.”</span>
+          <span class="venue">IEEE TIM</span>, 2023.
+          <span class="badge ieee">IEEE-汇刊</span>
+          <span class="links"><a href="https://ieeexplore.ieee.org/document/10288477" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/draymondbiao/DePF" target="_blank" rel="noopener noreferrer">code</a></span>
+        </li>
+
+        <li>
+          <span class="paper-title">“LE2Fusion: A novel local edge enhancement module for infrared and visible image fusion.”</span>
+          <span class="venue">ICIG</span>, 2023.
+          <span class="badge ccfc">CCF-C</span>
+          <span class="links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-46305-1_24" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/hli1221/LE2Fusion" target="_blank" rel="noopener noreferrer">code</a></span>
+        </li>
+
+        <li>
+          <span class="paper-title">“MUFusion: A general unsupervised image fusion network based on memory unit.”</span>
+          <span class="venue">Information Fusion</span>, 2023.
+          <span class="badge top">一区-Top</span>
+          <span class="links"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1566253522002202" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/AWCXV/MUFusion" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
+
+        <li>
+          <span class="paper-title">“UNIFusion: A lightweight unified image fusion network.”</span>
+          <span class="venue">IEEE TIM</span>, 2021.
+          <span class="badge ieee">IEEE-汇刊</span>
+          <span class="links"><a href="https://ieeexplore.ieee.org/document/9550760" target="_blank" rel="noopener noreferrer">paper</a><a href="https://github.com/AWCXV/UNIFusion" target="_blank" rel="noopener noreferrer">Code</a></span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" id="awards">
+      <div class="section-header">
+        <h2>Awards &amp; Projects</h2>
+        <p class="section-note">Selected honors and projects</p>
+      </div>
+
+      <ul class="award-list">
+        <li>2025 President's Special Award, Jiangnan University</li>
+        <li>2025 Top Ten Graduate Students, Jiangnan University</li>
+        <li><strong>Chair, Completed</strong>, 2023 Postgraduate Research &amp; Practice Innovation Program of Jiangsu Province</li>
+        <li>2021 National Scholarship for Graduate Students</li>
+        <li><strong>Silver Medal</strong>, 2019 ACM/ICPC International College Programming Competition Regional</li>
+        <li><strong>Silver Medal</strong>, 2018 China College Student Programming Competition (CCPC)</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <span>© Chunyang Cheng. Built for a clean academic homepage.</span>
+      <span class="visitor-card">Visitors: <strong id="gc-visitors">Loading...</strong></span>
+    </footer>
+  </main>
+
+  <script data-goatcounter="https://awcxvvvvv.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <script>
+    (function () {
+      const target = document.getElementById("gc-visitors");
+      if (!target) return;
+
+      fetch("https://awcxvvvvv.goatcounter.com/counter/TOTAL.json")
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+          target.textContent = data && data.count ? data.count : "Unavailable";
+        })
+        .catch(function () {
+          target.textContent = "Unavailable";
+        });
+    })();
+  </script>
 </body>
 </html>
-  
